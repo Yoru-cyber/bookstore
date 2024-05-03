@@ -19,3 +19,9 @@ services:
       - POSTGRES_USER=postgres
     ports:
       - 5432:5432
+  react_app:
+    container_name: react_app
+    image: react_app:latest
+    build: client/
+    ports:
+      - 5173:5173
