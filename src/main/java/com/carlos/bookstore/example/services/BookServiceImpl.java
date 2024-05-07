@@ -24,8 +24,8 @@ public class BookServiceImpl implements GenericService<Book> {
     }
 
     @Override
-    public Book editEntity(Long bookID) {
-        return null;
+    public void editEntity(Long bookID, Book editedBook) {
+        bookRepository.findById(bookID).map(book -> bookRepository.save(editedBook)).orElseThrow(()-> new BookNotFoundException(bookID));
     }
 
     @Override

@@ -25,10 +25,13 @@ BookController(BookServiceImpl bookService){
     public List<Book> all(){
     return bookService.listEntity();
 }
-    @GetMapping("/books/test")
-    public String test(){
-    return "test";
+    @Operation(summary = "Retrieves an instance of a book and modifies its info")
+    @PutMapping("/books/{id}")
+    public ResponseEntity<String> editBook(@PathVariable Long id, @RequestBody Book editedBook){
+    bookService.editEntity(id, editedBook);
+    return ResponseEntity.ok("Book modified");
     }
+
     @Operation(summary = "Creates a book instance onto database", description = "Needs to fulfill book model properties")
     @PostMapping("/books")
     public ResponseEntity<String> createBook(@RequestBody Book newBook){
