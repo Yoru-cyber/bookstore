@@ -14,6 +14,7 @@ function Books() {
       {error && <h2>error</h2>}
       <ul>
         {data &&
+        //rename e to book, check how to render from array<IBook>
           data.map((e: IBook) => (
             <li key={e.id} id={e.id.toString()}>
               <p>

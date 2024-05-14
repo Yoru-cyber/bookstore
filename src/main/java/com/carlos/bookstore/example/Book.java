@@ -15,7 +15,7 @@ public class Book {
     @NotBlank
     private @Id @GeneratedValue(strategy = GenerationType.AUTO) Long id;
     @NotBlank
-    @Size(min = 0, max = 30)
+    @Size(min = 0, max = 50)
     @Column(name="name")
     private String name;
     @NotBlank

@@ -6,6 +6,7 @@ import com.carlos.bookstore.example.services.BookServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,11 +21,15 @@ public class BookController {
 BookController(BookServiceImpl bookService){
     this.bookService = bookService;
 }
-    @Operation(summary = "Retrieves all book instances from database", description = "No conditions")
+//    @Operation(summary = "Retrieves all book instances from database", description = "No conditions")
+//    @GetMapping("/books")
+//    public List<Book> all(){
+//    return bookService.listEntity();
+//}
     @GetMapping("/books")
-    public List<Book> all(){
-    return bookService.listEntity();
-}
+    public Page<Book> all(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "5") int limit){
+        return bookService.listEntityPaginated(page, limit);
+    }
     @Operation(summary = "Retrieves an instance of a book and modifies its info")
     @PutMapping("/books/{id}")
     public ResponseEntity<String> editBook(@PathVariable Long id, @RequestBody Book editedBook){

@@ -4,6 +4,8 @@ import com.carlos.bookstore.example.Book;
 import com.carlos.bookstore.example.exceptions.BookNotFoundException;
 import com.carlos.bookstore.example.infrastructure.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -36,5 +38,9 @@ public class BookServiceImpl implements GenericService<Book> {
     @Override
     public List<Book> listEntity() {
         return bookRepository.findAll();
+    }
+    public Page<Book> listEntityPaginated(int page, int limit){
+        PageRequest pageRequest = PageRequest.of(page, limit);
+        return bookRepository.findAll(pageRequest);
     }
 }
