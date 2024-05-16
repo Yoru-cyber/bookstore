@@ -5,9 +5,11 @@ interface IBook {
   author: string;
   release_year: number;
 }
-
+interface IData{
+  content: Array<IBook>
+}
 const getData = (url: string) => {
-    const [data, setData] = useState<Array<IBook>>([]); // type should refactor to a Generic T for reutilization
+    const [data, setData] = useState<IData>(); // type should refactor to a Generic T for reutilization
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
 

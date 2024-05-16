@@ -1,20 +1,17 @@
 package com.carlos.bookstore.example.controllers;
 
 
-import com.carlos.bookstore.example.Book;
+import com.carlos.bookstore.example.models.Book;
 import com.carlos.bookstore.example.services.BookServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @RequestMapping("/")
-@CrossOrigin(origins = "http://localhost:8000")
+@CrossOrigin(origins = "http://localhost:5173")
 public class BookController {
     @Autowired
     private final BookServiceImpl bookService;

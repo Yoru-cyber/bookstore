@@ -1,6 +1,6 @@
-package com.carlos.bookstore.example.infrastructure;
+package com.carlos.bookstore.example.repositories;
 
-import com.carlos.bookstore.example.Book;
+import com.carlos.bookstore.example.models.Book;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

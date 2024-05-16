@@ -1,4 +1,4 @@
-package com.carlos.bookstore.example;
+package com.carlos.bookstore.example.models;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;

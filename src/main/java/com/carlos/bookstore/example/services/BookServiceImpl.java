@@ -1,8 +1,8 @@
 package com.carlos.bookstore.example.services;
 
-import com.carlos.bookstore.example.Book;
+import com.carlos.bookstore.example.models.Book;
 import com.carlos.bookstore.example.exceptions.BookNotFoundException;
-import com.carlos.bookstore.example.infrastructure.BookRepository;
+import com.carlos.bookstore.example.repositories.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
