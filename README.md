@@ -21,13 +21,9 @@ git https://github.com/Yoru-cyber/bookstore.git
 ```shell
 ./gradlew build
 ```
-**Run build of Docker compose**
+**Build and run the container**
 ```shell
-Docker compose build
-```
-**Create and initialize the container**
-```shell
-Docker compose up
+Docker compose up --build
 ```
 ### To add
 - Pagination ✅
